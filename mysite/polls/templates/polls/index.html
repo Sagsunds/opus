@@ -1,0 +1,88 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
+
+<!-- Poll list -->
+{% if latest_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+            <li>
+                <a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+<div class="characters">
+    <div id="box">
+    <div class="cat">
+        <!-- Head -->
+        <div class="head">
+        <div class="ears">
+            <div class="ear left"></div>
+            <div class="ear right"></div>
+        </div>
+        <div class="eyes">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+        </div>
+        <div class="muzzle">
+            <div class="nose"></div>
+        </div>
+        </div>
+
+        <!-- Body -->
+        <div class="body">
+        <div class="paw"></div>
+        </div>
+
+        <!-- Tail with nested segments -->
+        <div class="tail">
+        {% for _ in "123456789abcdef" %}
+            <div class="tail-segment">
+        {% endfor %}
+        {% for _ in "123456789abcdef" %}
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    </div>
+
+    <!-- Dog character -->
+    <div class="dog">
+    <div class="dog-ears"></div>
+
+    <div class="dog-body">
+        <div class="dog-eyes"></div>
+
+        <!-- Beard and mouth -->
+        <div class="beard">
+        <div class="dog-mouth">
+            <div class="dog-tongue"></div>
+        </div>
+        </div>
+
+        <!-- Collar/belt -->
+        <div class="belt">
+        <div class="locket"></div>
+        <div class="dot dot1"></div>
+        <div class="dot dot2"></div>
+        <div class="dot dot3"></div>
+        <div class="dot dot4"></div>
+        <div class="tag"></div>
+        </div>
+
+        <div class="stomach"></div>
+
+        <!-- Legs -->
+        <div class="dog-legs">
+        <div class="left"></div>
+        <div class="right"></div>
+        </div>
+    </div>
+
+    <!-- Tail -->
+    <div class="dog-tail"></div>
+    </div>
+</div>
